@@ -1,0 +1,15 @@
+# sudo cp autostart-minecraft.timer /etc/systemd/system/autostart-minecraft.timer
+# activate starting on reboot: sudo systemctl enable autostart-minecraft.timer
+# test: systemctl list-timers --all
+
+[Unit]
+Description=Minecraft server autostart
+
+[Timer]
+OnBootSec=20sec
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target
+
+# current issue: OnCalendar=hourly does nothing bc service is still running & doesn't run twice

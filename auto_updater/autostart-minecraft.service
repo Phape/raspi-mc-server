@@ -1,8 +1,7 @@
-# copy this script to /etc/systemd/system/
 # sudo cp autostart-minecraft.service /etc/systemd/system/autostart-minecraft.service
 # test with: sudo service autostart-minecraft status/start/stop/restart
-# for debugging: sudo tail -f /var/log/syslog
-# activate starting on reboot: sudo systemctl enable autostart-minecraft.service
+# Use system logs for debugging: sudo tail -f /var/log/syslog
+
 [Unit]
 Description=Minecraft server autostart
 After=network.target
@@ -12,7 +11,7 @@ ExecStart=/usr/bin/python3 -u auto_updater/auto_updater.py
 WorkingDirectory=/home/pi/minecraft-server/
 StandardOutput=inherit
 StandardError=inherit
-Restart=always
+Restart=on-abort
 User=pi
 
 [Install]

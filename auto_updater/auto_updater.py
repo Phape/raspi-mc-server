@@ -14,11 +14,14 @@ MANIFEST_URL = "https://launchermeta.mojang.com/mc/game/version_manifest.json"
 BACKUP_DIR = 'world_backups'
 LOG_FILENAME = 'auto_updater/auto_updater.log'
 
-time.sleep(15)
 logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler())
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
-logging.info('Timestamp: ' + datetime.now().isoformat())
+
+now = datetime.now().isoformat()
+logging.info('Timestamp: ' + now)
+os.system(
+    'screen -S minecraft -X stuff \'Time: ' + now + ' ^M\'')
 
 # retrieve version manifest
 response = requests.get(MANIFEST_URL)
