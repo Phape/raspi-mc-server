@@ -1,0 +1,9 @@
+*.json
+*.log
+*.jar
+*.properties
+*.txt
+.vscode
+world
+world_backups
+logs
