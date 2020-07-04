@@ -1,10 +1,13 @@
 #!/bin/bash
 echo "Starting Server with JVM Arguments from start.sh"
+echo "$USER"
 screen -S minecraft -d -m java -Xms1G -Xmx2500M -jar minecraft_server.jar nogui
-while :
-do
-    sleep 1
-done
+# tmux new -d -s minecraft
+
+# while :
+# do
+#     sleep 1
+# done
 # java -Xmx2800M -Xms2G -jar minecraft_server.jar nogui
 # su pi
 

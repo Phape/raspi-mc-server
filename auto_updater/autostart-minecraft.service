@@ -7,11 +7,13 @@ Description=Minecraft server autostart
 After=network.target
 
 [Service]
+Type=simple
 ExecStart=/usr/bin/python3 -u auto_updater/auto_updater.py
 WorkingDirectory=/home/pi/minecraft-server/
 StandardOutput=inherit
 StandardError=inherit
 Restart=on-abort
+RemainAfterExit=yes
 User=pi
 
 [Install]
