@@ -3,11 +3,10 @@
 # test: systemctl list-timers --all
 
 [Unit]
-Description=Minecraft server autostart
+Description=Minecraft server autostart timer
 
 [Timer]
 OnBootSec=20sec
-OnCalendar=hourly
 
 [Install]
 WantedBy=timers.target

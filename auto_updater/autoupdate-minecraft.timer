@@ -1,0 +1,13 @@
+# sudo cp autoupdate-minecraft.timer /etc/systemd/system/autoupdate-minecraft.timer
+# activate starting on reboot: sudo systemctl enable autostart-minecraft.timer
+# test: systemctl list-timers --all
+
+[Unit]
+Description=Minecraft server autoupdate timer
+BindsTo=autostart-minecraft.service
+
+[Timer]
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target

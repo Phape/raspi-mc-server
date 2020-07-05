@@ -5,10 +5,13 @@
 [Unit]
 Description=Minecraft server autostart
 After=network.target
+After=autoupdate-minecraft.service
+Requires=autoupdate-minecraft.service
+Requires=autoupdate-minecraft.timer
 
 [Service]
 Type=simple
-ExecStart=/usr/bin/python3 -u auto_updater/auto_updater.py
+ExecStart=sh java-starter.sh.sh
 WorkingDirectory=/home/pi/minecraft-server/
 StandardOutput=inherit
 StandardError=inherit

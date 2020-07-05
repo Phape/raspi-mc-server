@@ -96,13 +96,11 @@ for version in data['versions']:
 
             os.rename('minecraft_server.jar', '../minecraft_server.jar')
 
-        else:
-            logging.info('Server is already up to date.')
-
-        # Start Minecraft if not already running
-        if "java" not in (p.name() for p in psutil.process_iter()):
             logging.info('Auto-Updater finished. Starting server...')
             os.chdir("..")
-            os.system('sh start.sh')
+            os.system('sh java-starter.sh')
+
+        else:
+            logging.info('Server is already up to date.')
 
         break
