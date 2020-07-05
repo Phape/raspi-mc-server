@@ -1,4 +1,7 @@
 # raspi-mc-server
+
+This repository is archived. New version: <https://github.com/Phape/raspi-mc-server-updater> 
+<br>
 An auto-updating Minecraft server (eg. for Raspberry Pi)
 
 ## how to setup
