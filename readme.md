@@ -1,5 +1,17 @@
 # raspi-mc-server
 
+- [raspi-mc-server](#raspi-mc-server)
+  - [Project Description](#project-description)
+  - [how to setup](#how-to-setup)
+    - [Prepare your Raspi](#prepare-your-raspi)
+    - [Preparing the code on your Pi](#preparing-the-code-on-your-pi)
+    - [Handling the server](#handling-the-server)
+      - [Starting and Stopping the server](#starting-and-stopping-the-server)
+      - [Change amount of RAM](#change-amount-of-ram)
+    - [Making the server availible for the whole internet](#making-the-server-availible-for-the-whole-internet)
+
+## Project Description
+
 An auto-updating Minecraft server (eg. for Raspberry Pi)
 The code of the updater is from this repo: [eclair4151/MinecraftUpdater](https://github.com/eclair4151/MinecraftUpdater)
 
@@ -17,7 +29,7 @@ Note that if your intend is to use the server, I recommend using a Raspberry Pi 
 
    - [From Terminal](https://linuxize.com/post/how-to-enable-ssh-on-raspberry-pi/#enabling-ssh-from-the-terminal)
    - [With GUI](https://linuxize.com/post/how-to-enable-ssh-on-raspberry-pi/#enabling-ssh-from-gui)
-   - [Without Screen](https://linuxize.com/post/how-to-enable-ssh-on-raspberry-pi/#enabling-ssh-on-raspberry-pi-without-a-screen)
+   - [Without a Display](https://linuxize.com/post/how-to-enable-ssh-on-raspberry-pi/#enabling-ssh-on-raspberry-pi-without-a-screen)
 
 3. Setup a static IP-address for your Raspi. I recommend just doing so on the configuration page of your router, since it's very simple to do so. However, you can try doing it on the Pi. Look [here](https://pimylifeup.com/raspberry-pi-static-ip-address/) for example.
 
