@@ -5,7 +5,6 @@ import hashlib
 from datetime import datetime
 import logging
 import requests
-import psutil
 
 
 # CONFIGURATION
@@ -16,6 +15,7 @@ LOG_FILENAME = 'auto_updater/auto_updater.log'
 
 logging.basicConfig(filename=LOG_FILENAME, level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler())
+
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
 now = datetime.now().isoformat()
@@ -98,7 +98,7 @@ for version in data['versions']:
 
             logging.info('Auto-Updater finished. Starting server...')
             os.chdir("..")
-            os.system('sh java-starter.sh')
+            os.system('python3 java-starter.py')
 
         else:
             logging.info('Server is already up to date.')

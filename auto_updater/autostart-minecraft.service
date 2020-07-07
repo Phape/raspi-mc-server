@@ -11,7 +11,7 @@ Requires=autoupdate-minecraft.timer
 
 [Service]
 Type=simple
-ExecStart=sh java-starter.sh.sh
+ExecStart=python3 java-starter.py
 WorkingDirectory=/home/pi/minecraft-server/
 StandardOutput=inherit
 StandardError=inherit
