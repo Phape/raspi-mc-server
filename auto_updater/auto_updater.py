@@ -18,10 +18,10 @@ logging.getLogger().addHandler(logging.StreamHandler())
 
 os.chdir(os.path.dirname(os.path.abspath(__file__)))
 
-now = datetime.now().isoformat()
-logging.info('Timestamp: ' + now)
+now = datetime.now()
+logging.info('Timestamp: ' + now.isoformat())
 os.system(
-    'screen -S minecraft -X stuff \'Time: ' + now + ' ^M\'')
+    'screen -S minecraft -X stuff \'say Time: ' + now.strftime('%H:%M') + ' ^M\'')
 
 # retrieve version manifest
 response = requests.get(MANIFEST_URL)
