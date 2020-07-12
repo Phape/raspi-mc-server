@@ -1,0 +1,26 @@
+# sudo cp minecraft-server.service /etc/systemd/system/minecraft-server.service
+# test with: sudo service minecraft-server status/start/stop/restart
+# Use system logs for debugging: sudo tail -f /var/log/syslog
+
+[Unit]
+Description=Minecraft server autostart
+After=network.target
+After=update-minecraft-server.service
+Requires=update-minecraft-server.service
+Requires=update-minecraft-server.timer
+
+[Service]
+Type=simple
+ExecStart=python3 java-starter.py
+WorkingDirectory=/home/pi/minecraft-server/
+StandardOutput=inherit
+StandardError=inherit
+Restart=on-failure
+RestartSec=10s
+StartLimitBurst=3
+StartLimitIntervalSec=5min
+RemainAfterExit=yes
+User=pi
+
+[Install]
+WantedBy=multi-user.target

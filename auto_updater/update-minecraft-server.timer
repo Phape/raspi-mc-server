@@ -1,0 +1,13 @@
+# sudo cp update-minecraft-server.timer /etc/systemd/system/update-minecraft-server.timer
+# This timer is automatically activated when minecraft-server.service is started
+# test: systemctl list-timers --all
+
+[Unit]
+Description=Minecraft server autoupdate timer
+BindsTo=minecraft-server.service
+
+[Timer]
+OnCalendar=hourly
+
+[Install]
+WantedBy=timers.target

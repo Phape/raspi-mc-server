@@ -1,4 +1,4 @@
-# sudo cp autoupdate-minecraft.service /etc/systemd/system/autoupdate-minecraft.service
+# sudo cp update-minecraft-server.service /etc/systemd/system/update-minecraft-server.service
 
 [Unit]
 Description=Minecraft server autoupdate

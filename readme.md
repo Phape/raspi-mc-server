@@ -41,9 +41,9 @@ Note that if your intend is to use the server, I recommend using a Raspberry Pi 
 
 ### Preparing the code on your Pi
 
-1. Get the code from this repository to your Pi. For example, you could paste it here: `/home/pi/minecraft-server` You can use SSH for that. If you're a fan of VS Code, I recommend using the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). It allows you to work on your pi as you would on your local computer - via SSH
+1. Get the code from this repository to your Pi. For example, you could paste it here: `/home/pi/minecraft-server` You could can use SSH or git for that. If you're a fan of VS Code, I recommend using the [Remote Development Extension Pack](https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.vscode-remote-extensionpack). It allows you to work on your pi as you would on your local computer - via SSH
 
-2. Copy the .service and .timer files to /etc/systemd/system/ with `sudo cp auto_updater/*.{service,timer} /etc/systemd/system/` You have to be in the `minecraft-server` directory to run that command.
+2. Copy the .service and .timer files to /etc/systemd/system/ with `sudo cp auto_updater/*.{service,timer} /etc/systemd/system/` You have to be in the `minecraft-server` directory to run that command. To start the server when the pi boots, enable the timer with `sudo systemctl enable minecraft-server.timer`
 
 3. Restart your Pi: `sudo reboot`
 
@@ -69,11 +69,11 @@ Don't forget to change the IP address to the one of you Pi.
 #### Starting and Stopping the server
 
 - The server starts automatically when your Pi is starting
-- You can manually start and stop the server using `sh _start-server.sh` and `sh _stop-server.sh` while you are in your `minecraft-server` directory
+- You can manually start and stop the server using `python _start-server.py` and `python _stop-server.py` while you are in your `minecraft-server` directory
 
 #### Change amount of RAM
 
-- You can do so in the [java-starter.sh](java-starter.sh) file
+- You can do so in the [java-starter.py](java-starter.py) file
 - Note that Raspberry Pi OS is typically a 32-bit system. In my experience, you should not allow more RAM than 2500M
 - `-Xms1G` defines that the server should start with 1GB of RAM
 - `-Xmx2500M` defines that the server should use ~2.5GB of RAM at max

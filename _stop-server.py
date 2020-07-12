@@ -6,4 +6,4 @@ this script stops the check for minecraft updates in regular time intervals as w
 """
 import os
 
-os.system('service autostart-minecraft stop')
+os.system('service minecraft-server stop')

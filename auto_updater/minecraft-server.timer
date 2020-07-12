@@ -1,0 +1,12 @@
+# sudo cp minecraft-server.timer /etc/systemd/system/minecraft-server.timer
+# activate starting on reboot: sudo systemctl enable minecraft-server.timer
+# test: systemctl list-timers --all
+
+[Unit]
+Description=Minecraft server autostart timer
+
+[Timer]
+OnBootSec=20sec
+
+[Install]
+WantedBy=timers.target
