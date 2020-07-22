@@ -97,8 +97,8 @@ for version in data['versions']:
             os.rename('minecraft_server.jar', '../minecraft_server.jar')
 
             logging.info('Auto-Updater finished. Starting server...')
-            os.chdir("..")
-            os.system('python3 java-starter.py')
+            os.system('service minecraft-server restart')
+
 
         else:
             logging.info('Server is already up to date.')
