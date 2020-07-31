@@ -15,7 +15,7 @@ StartLimitBurst=3
 
 [Service]
 Type=simple
-ExecStart=python3 java-starter.py
+ExecStart=python3 server-runner.py
 WorkingDirectory=/home/pi/minecraft-server/
 StandardOutput=inherit
 StandardError=inherit

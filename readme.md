@@ -81,4 +81,4 @@ Don't forget to change the IP address to the one of you Pi.
 ### Making the server availible for the whole internet
 
 - At the moment, you can only connect to your server while you are in the same network as your Pi. Your friends can't join from their homes. Let's change that!
-- This will be amended shortly
+- This will be amended soon
