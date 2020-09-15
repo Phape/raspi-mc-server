@@ -50,11 +50,14 @@ for version in data['versions']:
         logging.info('Your sha1 is ' + cur_ver + '. Latest version is ' +
                      str(minecraft_ver) + " with sha1 of " + jar_sha)
 
+        # Update the Server
         if cur_ver != jar_sha:
+            stopAutoServerRestart = True
             logging.info('Updating server...')
             link = jar_data['downloads']['server']['url']
             logging.info('Downloading .jar from ' + link + '...')
             response = requests.get(link)
+
             with open('minecraft_server.jar', 'wb') as jar_file:
                 jar_file.write(response.content)
             logging.info('Downloaded.')
@@ -77,6 +80,7 @@ for version in data['versions']:
             os.system('screen -S minecraft -X stuff \'stop^M\'')
             time.sleep(5)
 
+            #Backup World
             if os.path.exists("../world"):
                 logging.info('Backing up world...')
 
@@ -96,6 +100,7 @@ for version in data['versions']:
 
             os.rename('minecraft_server.jar', '../minecraft_server.jar')
 
+            #Restart Server
             logging.info('Auto-Updater finished. Starting server...')
             os.system('service minecraft-server restart')
 
