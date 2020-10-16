@@ -24,8 +24,11 @@ os.system(
     'screen -S minecraft -X stuff \'say Time: ' + now.strftime('%H:%M') + ' ^M\'')
 
 # retrieve version manifest
-response = requests.get(MANIFEST_URL)
-data = response.json()
+try:
+    response = requests.get(MANIFEST_URL)
+    data = response.json()
+except:
+    logging.info('Could not retrieve version manifest.')
 
 if UPDATE_TO_SNAPSHOT:
     minecraft_ver = data['latest']['snapshot']
@@ -52,7 +55,6 @@ for version in data['versions']:
 
         # Update the Server
         if cur_ver != jar_sha:
-            stopAutoServerRestart = True
             logging.info('Updating server...')
             link = jar_data['downloads']['server']['url']
             logging.info('Downloading .jar from ' + link + '...')

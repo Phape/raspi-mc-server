@@ -4,6 +4,7 @@
 *.properties
 *.txt
 .vscode
+*cache*
 world
 world_backups
 logs
