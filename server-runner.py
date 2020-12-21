@@ -1,8 +1,8 @@
 import os, getpass, time, logging, logging.handlers
 
-# print("Current User:", getpass.getuser())
 logging.basicConfig(level=logging.INFO)
 logging.getLogger().addHandler(logging.StreamHandler())
+logging.info("Current User: " + getpass.getuser())
 
 process_name= "java"
 
