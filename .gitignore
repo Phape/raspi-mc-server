@@ -5,7 +5,7 @@
 *.txt
 .vscode
 *cache*
-world
+*world
 world_backups
 logs
 crash-reports
